@@ -1,0 +1,461 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+    margin-top:70px;
+}
+
+/* Main Wrapper for Editor Layout */
+.upload-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Main Content Area --- */
+
+.editor-main-content {
+    flex-grow: 1;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    padding-top: 100px; 
+}
+
+.welcome-section {
+    width: 100%; /* Allows it to occupy full width to center content */
+    text-align: center;
+    padding: 50px;
+}
+
+.welcome-section h2 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 50px; /* Space above the icons */
+}
+
+/* --- Project Details Form --- */
+
+.project-details-form {
+    width: 100%;
+    max-width: 600px; /* Limit the form width */
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(143, 142, 142, 0.05);
+    text-align: left; /* Reset text-align from welcome-section */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.project-details-form input[type="text"],
+.project-details-form input[type="url"],
+.project-details-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    background-color: #fff; /* Ensure inputs stay white */
+    color: #333; 
+}
+
+.project-details-form input:focus,
+.project-details-form textarea:focus {
+    border-color: #053eff;
+    outline: none;
+}
+
+.project-details-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    background-color: #f8f8f0; /* Light cream background for the description box */
+}
+
+.btn-save-details {
+    padding: 10px 20px;
+    background-color: #053eff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+
+.btn-save-details:hover {
+    background-color: #032dbe;
+}
+
+.btn-cancel {
+    padding: 10px 20px;
+    background-color: #f0f2f5;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background-color: #e0e2e5;
+}
+
+
+/* --- Content Starter Grid (Large Circular Icons) --- */
+.content-starter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns to fit common screen sizes better */
+    gap: 30px; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.starter-icon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px; 
+    height: 120px; 
+    border: 1px solid #ddd;
+    border-radius: 50%; 
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none; 
+    color: #333; 
+    margin: 0 auto; /* Center individual items */
+}
+
+.starter-icon-btn:hover {
+    border-color: #053eff; 
+    box-shadow: 0 0 10px rgba(5, 62, 255, 0.1);
+}
+
+.starter-icon-btn .icon {
+    font-size: 36px; 
+    margin-bottom: 10px;
+    color: #053eff; 
+}
+
+.starter-icon-btn .label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* --- Sidebar --- */
+.editor-sidebar {
+    width: 280px; 
+    background-color: #fff;
+    border-left: 1px solid #eee;
+    padding: 20px;
+    flex-shrink: 0; 
+
+    position: sticky; /* This makes it stick */
+    top: 0;          /* This is the offset from the top of the viewport where it stops */
+    align-self: flex-start;
+    max-height: 100vh;
+    overflow-y: auto; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+}
+
+.sidebar-section {
+    margin-bottom: 30px;
+}
+
+.sidebar-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Sidebar Content Grid (Smaller Square Icons) */
+.sidebar-content-grid,
+.sidebar-edit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+}
+
+.sidebar-content-btn,
+.sidebar-edit-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.sidebar-content-btn:hover,
+.sidebar-edit-btn:hover {
+    background-color: #f0f2f5;
+    border-color: #ddd;
+}
+
+.sidebar-content-btn .icon,
+.sidebar-edit-btn .icon {
+    font-size: 24px; 
+    margin-bottom: 5px;
+    color: #053eff;
+}
+
+/* Custom Button Section */
+.custom-button-section {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.custom-call-to-action-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f2f5; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.custom-call-to-action-btn:hover {
+    background-color: #e0e2e5;
+}
+
+.custom-button-hint {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+
+/* ================================================= */
+/* --- PROJECT PREVIEW / GRID UPLOADER STYLES --- */
+/* ================================================= */
+
+/* Uploader View Container */
+.grid-uploader-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.grid-uploader-container h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Image Grid Container (The core component) */
+.current-grid-images {
+    display: grid;
+    /* Responsive columns: min 150px, max 1fr */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px; 
+    min-height: 150px;
+    padding: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background-color: #f9f9f9;
+}
+
+.empty-grid-message {
+    /* Center the message within the grid area */
+    grid-column: 1 / -1; 
+    color: #888;
+    font-size: 16px;
+    margin: auto;
+}
+
+/* Individual Image Wrapper - Enables the square aspect ratio and thumbnail selection */
+.grid-image-wrapper {
+    position: relative;
+    width: 100%; 
+    padding-top: 100%; /* Forces a 1:1 aspect ratio */
+    height: 0; 
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 3px solid transparent; /* Default border */
+    overflow: hidden;
+}
+
+.grid-image-wrapper:hover {
+    box-shadow: 0 0 0 2px rgba(5, 62, 255, 0.5);
+}
+
+.grid-image-wrapper.is-thumbnail {
+    /* Highlight the selected thumbnail */
+    border: 3px solid #053eff; 
+    box-shadow: 0 0 0 4px rgba(5, 62, 255, 0.3);
+}
+
+.grid-preview-image {
+    /* Positions the image inside the square wrapper */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the square */
+    border-radius: 4px;
+    display: block; 
+}
+
+.thumbnail-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #053eff;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.btn-add-grid-images {
+    padding: 12px 25px;
+    background-color: #053eff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-bottom: 15px;
+}
+
+.btn-add-grid-images:hover {
+    background-color: #032dbe;
+}
+
+/* ================================================= */
+/* --- FINAL PROJECT CONTENT DISPLAY STYLES --- */
+/* ================================================= */
+
+/* Container for the preview */
+.content-preview-container {
+    max-width: 900px; 
+    margin: 30px auto 0 auto;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.content-preview-container h3 {
+    text-align: left;
+    padding: 20px 20px 0 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* The actual uploaded thumbnail image (large display) */
+.uploaded-project-preview {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px; /* Limit height for aesthetic */
+    display: block;
+    object-fit: contain;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+}
+
+/* Final gallery display grid */
+.final-grid-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.final-preview-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional caption below the preview */
+.preview-caption {
+    padding: 15px;
+    background-color: #f8f8f8;
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+}
+.btn-upload {
+  /* Changed from orange to blue */
+  background-color: #053eff; /* Changed to match your existing blue theme */
+  color: white; /* White text for contrast */
+  border: 1px solid #053eff; /* Updated border color to match */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover {
+  background-color: #032dbe; /* Darker blue on hover to match your theme */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}

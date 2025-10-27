@@ -1,0 +1,418 @@
+/* UsersProfile styles: header, avatar, sidebar settings, works grid */
+
+.profile-page-container {
+  padding: 0 24px 48px;
+  box-sizing: border-box;
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.profile-main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+  border-radius: 4px;
+  overflow: visible;
+}
+
+/* Header / cover */
+.profile-header-section {
+  position: relative;
+  height: 240px;
+  cursor: pointer;
+  overflow: visible;
+}
+.profile-cover-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px 4px 0 0;
+}
+.profile-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #e9eef0, #f3f6f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 4px 0 0;
+}
+.cover-upload-area {
+  text-align: center;
+  color: #777;
+}
+.cover-upload-icon {
+  font-size: 22px;
+}
+.cover-upload-text {
+  margin-top: 8px;
+  font-size: 13px;
+}
+.profile-cover-input { display: none; }
+
+/* header inner stacking so avatar & name appear above cover */
+.profile-header-inner {
+  position: absolute;
+  left: 24px;
+  bottom: -40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  z-index: 4; /* ensure above cover */
+}
+
+/* Avatar look */
+.avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFB37A 0%, #FF8A66 100%);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.profile-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 3px solid #fff;
+  display: block;
+}
+
+/* name and follow button (when using left-aligned header) */
+.profile-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-name-followers {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111; /* now dark for visibility on light backgrounds */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* followers/meta (kept) */
+.profile-followers-meta {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  color: #666;
+  font-size: 13px;
+}
+.profile-followers-count {
+  font-weight: 700;
+  color: #0b69ff;
+}
+.profile-followers-label { color: #666; }
+
+/* action buttons */
+.profile-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+.profile-follow-button {
+  background: #0b69ff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.profile-message-button {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* layout */
+.profile-details-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  padding: 64px 28px 28px;
+  box-sizing: border-box;
+}
+
+/* sidebar */
+.profile-sidebar {
+  position: relative;
+}
+
+.section-title {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.profile-about-section .about-description {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.profile-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* profile links rows */
+.profile-link-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.04);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.profile-link-label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.profile-link-icon { width: 18px; height: 18px; object-fit: contain; }
+.profile-link-text { font-size: 13px; color: #222; }
+.profile-link-arrow { width: 14px; height: 14px; opacity: 0.8; }
+
+/* settings box */
+.settings-container {
+  margin-top: 18px;
+}
+.settings-box {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.settings-line {
+  height: 1px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.03);
+  cursor: pointer;
+}
+.settings-item:hover { background: #f8f9fb; }
+.settings-item-left { display:flex; align-items:center; gap:8px; }
+.settings-item-label { font-size: 13px; color: #222; }
+.settings-item-arrow { width: 14px; height: 14px; opacity: 0.7; }
+
+/* logout style */
+.settings-item-logout .logout-label { color: #d9534f; font-weight: 600; }
+
+/* works grid */
+.profile-works-section {
+  padding-top: 6px;
+}
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 18px;
+}
+.work-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: visible;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.work-image-container {
+  position: relative;
+  height: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+.work-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  cursor: pointer;
+}
+
+.work-title {
+  margin: 0;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+/* no works */
+.no-works { color: #666; padding: 20px; }
+
+.project-delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  z-index: 10;
+}
+
+.project-delete-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* Center avatar and name (used on centered header layout) */
+.centered-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 5; /* above cover */
+}
+
+/* make profile-name visible regardless of cover color */
+.centered-avatar .profile-name {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* Add follow button styles */
+.profile-follow-button {
+  background: #0b69ff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(11,105,255,0.12);
+  width: 100%;
+  max-width: 220px;
+}
+.profile-followback-button {
+  background: #fff;
+  color: #0b69ff;
+  border: 1px solid rgba(11,105,255,0.14);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+}
+.profile-following-button {
+  background: transparent;
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+}
+
+/* disabled state */
+.profile-follow-button[disabled],
+.profile-followback-button[disabled],
+.profile-following-button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ensure header layout has space for button */
+.profile-header-inner.centered-avatar {
+  z-index: 5;
+}
+
+.sidebar-follow-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 14px;
+  padding: 0 6px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .profile-details-layout {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+  .profile-header-inner { left: 16px; bottom: -48px; }
+  .avatar-wrap { width: 84px; height: 84px; padding: 5px; }
+  .profile-avatar { width: 74px; height: 74px; }
+}
+.avatar-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.avatar-preview-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}

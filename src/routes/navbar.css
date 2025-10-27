@@ -1,0 +1,526 @@
+/* ========================================= */
+/* Navbar Container (Frame 398)              */
+/* ========================================= */
+.homepage,
+.settings-root,
+.dashboard-root,
+.upload-root {
+  margin-top: 57px; /* Same as navbar height */
+}
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 0;
+  height: 57px;
+  background: #201F1B;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 95vw;
+  max-width: 1200px;
+  height: 100%;
+  padding: 0 2vw;
+  gap: 2vw;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  width: 80px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-bottom: 2px solid transparent;
+  transition: transform 0.2s, border-bottom 0.2s;
+}
+
+.navbar-logo:hover img {
+  transform: translateY(-14px) scale(1.12);
+}
+
+.navbar-logo.active-icon img {
+  border-bottom: 2px solid #ffffff;
+}
+
+.navbar-search-bar {
+  box-sizing: border-box;
+  width: 300px;
+  max-width: 40vw;
+  height: 34px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  margin: 0 24px;
+  position: relative;
+}
+
+.navbar-search-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-search-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.navbar-search-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 180px;
+  padding: 4px 8px;
+}
+.navbar-search-content input.navbar-search-text {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #000;
+  padding: 4px 8px;
+}
+
+.search-error {
+  position: absolute;
+  left: 0;
+  top: 38px;
+  width: 100%;
+  color: #ff5555;
+  font-size: 13px;
+  text-align: center;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  z-index: 10;
+  padding: 2px 0;
+}
+
+/* Search results dropdown + avatar */
+.search-results-dropdown {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.search-result-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.search-result-row:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+.search-result-row:last-child { border-bottom: 0; }
+
+.search-result-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f0f0f0;
+  flex: 0 0 36px;
+}
+
+.search-result-label {
+  font-size: 14px;
+  color: #111;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Navbar right icons */
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: auto;
+  height: 32px;
+}
+
+.icon-link {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-bottom: 2px solid transparent;
+  transition: transform 0.2s, border-bottom 0.2s;
+}
+
+/* Move up and scale on hover */
+.icon-link:hover img,
+.user-profile:hover img {
+  transform: translateY(-14px) scale(1.12);
+  transition: transform 0.2s;
+}
+
+/* White underline only when active (clicked) */
+.icon-link.active-icon img,
+.user-profile.active-icon img {
+  border-bottom: 2px solid #ffffff;
+  transition: border-bottom 0.2s;
+}
+
+.user-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border-bottom: 2px solid transparent;
+  transition: transform 0.2s, border-bottom 0.2s;
+}
+
+.icon-link,
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover-letter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-letter {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0046CC;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.hover-letter:hover .icon-letter {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px) scale(1.1);
+}
+
+/* Responsive and Adaptive Styles */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 98vw;
+    padding: 0 1vw;
+    gap: 1.5vw;
+  }
+
+  .navbar-search-bar {
+    width: 280px;
+    max-width: 35vw;
+    margin: 0 16px;
+    padding: 0 10px;
+  }
+
+  .navbar-search-text {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .icon-link,
+  .user-profile {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-link img,
+  .user-profile img {
+    transition: transform 0.15s; /* Faster on smaller screens */
+  }
+
+  .icon-letter {
+    font-size: 13px;
+    padding: 1px 6px;
+    bottom: -26px;
+  }
+}
+
+/* Mobile Large (max-width: 900px) - Stack to column */
+@media (max-width: 900px) {
+  .navbar-container {
+    height: auto;
+    min-height: 57px; /* Maintain space for content below */
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    height: auto;
+    gap: 10px;
+    padding: 8px 2vw;
+    width: 96vw;
+  }
+
+  .navbar-logo {
+    width: 70px;
+    height: 22px;
+    order: 1; /* Logo first */
+  }
+
+  .navbar-search-bar {
+    width: 90vw;
+    max-width: 100%;
+    margin: 0 auto;
+    order: 2; /* Search second */
+    height: 36px; /* Slightly taller for touch */
+  }
+
+  .navbar-search-content {
+    gap: 6px;
+  }
+
+  .navbar-search-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .navbar-search-text {
+    font-size: 15px; /* Maintain readability */
+    padding: 4px 8px;
+  }
+
+  .search-error {
+    top: 40px;
+    font-size: 12px;
+    padding: 4px 0;
+  }
+
+  .navbar-links {
+    order: 3; /* Links last */
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    padding: 4px 0;
+    height: auto;
+  }
+
+  .icon-link,
+  .user-profile {
+    width: 32px;
+    height: 32px; /* Keep tappable size */
+  }
+
+  /* Hide tooltips on mobile to save space */
+  .icon-letter {
+    display: none;
+  }
+
+  .hover-letter:hover .icon-letter {
+    display: none;
+  }
+}
+
+/* Mobile (max-width: 768px) - Further optimizations */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 8px;
+    padding: 6px 3vw;
+  }
+
+  .navbar-logo {
+    width: 65px;
+    height: 20px;
+  }
+
+  .navbar-search-bar {
+    width: 92vw;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 25px; /* Slightly less rounded for touch */
+  }
+
+  .navbar-search-text {
+    font-size: 16px; /* Larger for easier typing on mobile */
+  }
+
+  .navbar-links {
+    gap: 10px;
+  }
+
+  .icon-link,
+  .user-profile {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Reduce hover animations on touch devices */
+  .icon-link:hover img,
+  .user-profile:hover img,
+  .navbar-logo:hover img {
+    transform: none; /* Disable lift on mobile to avoid jitter */
+  }
+}
+
+/* Small Mobile (max-width: 480px) - Compact mode */
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 70px; /* Extra space for stacked layout */
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px 2vw;
+    width: 100vw;
+  }
+
+  .navbar-logo {
+    width: 60px;
+    height: 18px;
+    align-self: center;
+  }
+
+  .navbar-logo img {
+    transition: transform 0.1s; /* Quick if any */
+  }
+
+  .navbar-search-bar {
+    width: 95vw;
+    height: 40px; /* Larger for thumb typing */
+    padding: 0 14px;
+    margin: 0;
+  }
+
+  .navbar-search-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .navbar-search-text {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .search-error {
+    top: 42px;
+    font-size: 12px;
+    padding: 4px 0;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .navbar-links {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2px 0;
+  }
+
+  .icon-link,
+  .user-profile {
+    width: 28px;
+    height: 28px; /* Minimum tappable size ~44px effective with padding */
+  }
+
+  .icon-link img,
+  .user-profile img {
+    border-radius: inherit;
+  }
+
+  /* Ensure no overflow */
+  .navbar-links {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Very Small Screens (max-width: 320px) - Extreme compact */
+@media (max-width: 320px) {
+  .navbar-search-bar {
+    width: 98vw;
+    padding: 0 10px;
+  }
+
+  .navbar-links {
+    gap: 6px;
+  }
+
+  .icon-link,
+  .user-profile {
+    width: 26px;
+    height: 26px;
+  }
+
+  .navbar-search-text {
+    font-size: 15px;
+  }
+}
