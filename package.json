@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-     "start": "node server.js",
+    "start": "node server.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -34,5 +34,18 @@
     "supabase": "^2.53.6",
     "tailwindcss": "^4.1.13",
     "vite": "^7.1.2"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xbit-arc/Xhibit-arc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xbit-arc/Xhibit-arc/issues"
+  },
+  "homepage": "https://github.com/Xbit-arc/Xhibit-arc#readme"
 }
